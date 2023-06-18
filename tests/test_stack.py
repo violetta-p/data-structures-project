@@ -17,6 +17,7 @@ class TestStack(unittest.TestCase):
         self.assertEqual(None, self.stack.top.next_node.next_node.next_node)
 
     def test_pop(self):
+        self.assertEqual(None, self.stack.top)
         self.stack.push(1)
         self.stack.push(2)
         self.stack.push(3)
@@ -24,3 +25,10 @@ class TestStack(unittest.TestCase):
         self.assertEqual(2, self.stack.pop())
         self.assertEqual(1, self.stack.pop())
         self.assertEqual(None, self.stack.top)
+
+    def test_str(self):
+        self.assertEqual('No data', str(self.stack))
+        self.stack.push('data1')
+        self.stack.push('data2')
+        self.stack.push('data3')
+        self.assertEqual('data3\ndata2\ndata1', str(self.stack))
