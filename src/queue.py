@@ -26,15 +26,15 @@ class Queue:
         new_node = Node(data)
 
         if not self.head:
-            self.head = self.tail = new_node  # Если очередь пустая, то новый узел - и head, и tail.
+            self.head = self.tail = new_node
         else:
             self.tail.next_node = new_node
             self.tail = new_node
 
     def dequeue(self):
         """
-        Метод для удаления элемента из очереди. Возвращает данные удаленного элемента
-        :return: данные удаленного элемента
+        Метод для удаления элемента из очереди.
+        :return: Данные удаленного элемента
         """
         if self.head is None:
             return None
